@@ -6,7 +6,7 @@
 </h1>
 
 <p align="center">
-  Minimalist <b>LaTeX CV Template</b> — Black & White · Modular · ATS-Friendly
+  Minimalist <b>LaTeX CV Template</b> — Black & White · Modular
 </p>
 
 
