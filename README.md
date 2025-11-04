@@ -25,7 +25,7 @@ ATS Simple CV es una plantilla de \LaTeX{} limpia y modular para crear un CV pro
 <h2 align="center">📄 Preview</h2>
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV.pdf">
+  <a href="https://github.com/DotStefano/Simple-CV/blob/main/Example/Simple_CV.pdf">
     <img src="https://img.shields.io/badge/Simple%20CV-PDF-green.svg" alt="View PDF" />
   </a>
 </p>
