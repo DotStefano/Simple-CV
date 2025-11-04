@@ -1,7 +1,9 @@
 <h1 align="center">
   <a href="https://github.com/DotStefano/Simple-CV" title="Simple CV">
     <br />
-    📄 Simple CV 📄
+    Simple CV
+	  
+	  📄
   </a>
 </h1>
 
@@ -9,7 +11,6 @@
   Minimalist <b>LaTeX CV Template</b> — Black & White · Modular · ATS-Friendly
 </p>
 
-Overview
 
 ATS Simple CV es una plantilla de \LaTeX{} limpia y modular para crear un CV profesional, compatible con ATS (seguro para Applicant Tracking System) y fácil de imprimir. Está inspirado en una filosofía de diseño minimalista: tipografía clara, sin colores, sin imágenes, solo contenido estructurado y semántico.
 
