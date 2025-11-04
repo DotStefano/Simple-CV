@@ -22,8 +22,31 @@ ATS Simple CV es una plantilla de \LaTeX{} limpia y modular para crear un CV pro
 
     Construido para los sistemas de análisis de los reclutadores: 100% basado en texto.
 
-Preview
+<h2 align="center">📄 Preview</h2>
 
-| Page 1 | Page 2 |
-|:------:|:------:|
-| [![Simple CV Page 1](https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV-1.png)](https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV.pdf) | [![Simple CV Page 2](https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV-2.png)](https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV.pdf) |
+<p align="center">
+  <a href="https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV.pdf">
+    <img src="https://img.shields.io/badge/Simple%20CV-PDF-green.svg" alt="View PDF" />
+  </a>
+</p>
+
+<p align="center">
+  <table align="center">
+    <tr>
+      <th>Page 1</th>
+      <th>Page 2</th>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV.pdf">
+          <img src="https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV-1.png" width="350px" alt="Simple CV Page 1"/>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV.pdf">
+          <img src="https://raw.githubusercontent.com/DotStefano/Simple-CV/main/img/SimpleCV-2.png" width="350px" alt="Simple CV Page 2"/>
+        </a>
+      </td>
+    </tr>
+  </table>
+</p>
