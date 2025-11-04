@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://github.com/posquit0/Awesome-CV" title="Simple CV">
+  <a href="[https://github.com/posquit0/Awesome-CV](https://github.com/DotStefano/Simple-CV)" title="Simple CV">
   <br />
   Simple CV
 </h1>
