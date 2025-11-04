@@ -1,10 +1,13 @@
 <h1 align="center">
   <a href="https://github.com/DotStefano/Simple-CV" title="Simple CV">
-  <br />
-  Simple CV
+    <br />
+    🖤 Simple CV 🖤
+  </a>
 </h1>
 
-Minimalist modular LaTeX CV template
+<p align="center">
+  Minimalist <b>LaTeX CV Template</b> — Black & White · Modular · ATS-Friendly
+</p>
 
 Overview
 
