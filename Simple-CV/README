@@ -1,0 +1,260 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% README — Simple CV (Black & White, Modular)
+% Version 1.0 — November 2025
+%
+% Compile with XeLaTeX or LuaLaTeX
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+% ---- Packages
+\usepackage{fontspec}      % Unicode text
+\usepackage{geometry}      % Page margins
+\usepackage{parskip}       % Better paragraph spacing
+\usepackage[unicode]{hyperref} % Clickable links
+\usepackage{enumitem}      % Compact item lists
+\usepackage{xifthen}       % Simple conditionals
+\usepackage{fontawesome5}  % Icons (email, phone, github, linkedin)
+\usepackage{tabularx}      % Flexible tables
+\usepackage{array}         % Table alignment
+\usepackage{listings}      % Code blocks
+
+% ---- Typography & layout
+\geometry{left=2.5cm,right=2.5cm,top=2.2cm,bottom=2.5cm}
+\setmainfont{TeX Gyre Heros}
+\linespread{1.12}
+\sloppy
+\emergencystretch=2em
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  pdftitle={README — Simple CV Template}
+}
+
+% ---- Code style
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+}
+
+\begin{document}
+\begin{center}
+  {\LARGE\bfseries Simple CV — Black \& White (Modular)}\\[6pt]
+  {\large Documentation and Usage Guide}\\[4pt]
+  \rule{\textwidth}{0.5pt}
+\end{center}
+
+\section*{Overview}
+
+This is a minimalist and professional \LaTeX{} template for creating a \textbf{modular}, \textbf{ATS-friendly}, and \textbf{print-ready} CV.  
+It is designed for modern workflows using \textbf{LuaLaTeX} or \textbf{XeLaTeX}, ensuring full Unicode and font support.  
+The layout is purely black \& white for a timeless and clean appearance.
+
+\begin{itemize}[itemsep=4pt]
+  \item Black and white minimalist layout — printer-friendly and elegant.
+  \item Modular structure: each section lives in its own \texttt{.tex} file.
+  \item Optional FontAwesome 5 icons for contact information.
+  \item Uses \texttt{TeX Gyre Heros} for a clean sans-serif appearance.
+\end{itemize}
+
+\section*{Requirements}
+
+Compile with either:
+\begin{itemize}
+  \item \textbf{LuaLaTeX} (recommended)
+  \item \textbf{XeLaTeX}
+\end{itemize}
+
+This template will not compile with \textbf{pdfLaTeX}, as it requires Unicode and OpenType font support.
+
+\subsection*{Required Packages}
+
+\texttt{fontspec}, \texttt{geometry}, \texttt{parskip}, \texttt{hyperref}, 
+\texttt{enumitem}, \texttt{xifthen}, \texttt{fontawesome5}, \texttt{tabularx}, 
+\texttt{array}, \texttt{listings}.
+
+These are included by default in \textbf{TeX Live 2023+} or \textbf{MiKTeX 2023+} distributions.
+
+\newpage
+
+\section*{Project Structure}
+
+\begin{lstlisting}
+.
+├── main.tex                # Main file — compile this one
+├── sections/
+│   ├── summary.tex         # Professional summary or objective
+│   ├── education.tex       # Degrees and certifications
+│   ├── skills.tex          # Key skills (technical & soft)
+│   ├── experience.tex      # Work experience
+│   ├── extracurricular.tex # Volunteering, languages, etc.
+│   └── (optional)          # honors.tex, publications.tex, etc.
+└── README.tex
+\end{lstlisting}
+
+\section*{How to Compile}
+
+\subsection*{VS Code + LaTeX Workshop}
+\begin{enumerate}
+  \item Open the project folder in VS Code.
+  \item Press \texttt{Ctrl + Alt + B} (Windows/Linux) or \texttt{Cmd + Option + B} (Mac).
+  \item Choose \textbf{XeLaTeX} or \textbf{LuaLaTeX}.
+\end{enumerate}
+
+\subsection*{Command Line}
+\begin{lstlisting}
+lualatex main.tex
+# or
+xelatex main.tex
+\end{lstlisting}
+
+\section*{Customization}
+
+Your personal information is defined at the top of \texttt{main.tex}:
+
+\begin{lstlisting}
+\newcommand{\cvName}{Daniel}
+\newcommand{\cvSurname}{E. Harris}
+\newcommand{\cvRole}{Finance Manager}
+\newcommand{\cvLocation}{New York, NY}
+\newcommand{\cvPhone}{(+1) 516-436-0384}
+\newcommand{\cvEmail}{DanielEHarris@jourrapide.com}
+\newcommand{\cvWebsite}{https://bellautoonline.com}
+\newcommand{\cvGithub}{MySite}
+\newcommand{\cvLinkedin}{MySite}
+\end{lstlisting}
+
+\section*{Adding a New Section}
+
+Each section lives in its own file inside the \texttt{sections/} folder.
+
+\subsection*{Step 1 — Create the File}
+\begin{lstlisting}
+sections/projects.tex
+\end{lstlisting}
+
+\subsection*{Step 2 — Add Content}
+Use the \texttt{\textbackslash CVRole} macro for professional experience (or any section):
+
+\begin{lstlisting}
+% ============================================================
+% <SECTION NAME>
+% Generic template for any section (Experience, Education, Projects, etc.)
+% Fill in <...> fields and include 2–5 achievement bullets.
+% ============================================================
+
+\CVSection{<SECTION NAME>} % e.g., Experience, Education, Projects
+
+% ------------------ Entry 1 ------------------
+\CVRole
+  {<Primary>}       % e.g., Finance Manager | MSc in Data Science | Project Lead
+  {<Organization>}  % e.g., EagleCorp Holdings | NYU | Personal Project
+  {<Location>}      % e.g., New York, NY | Remote
+  {<Dates>}         % e.g., Jan. 2022 -- Present | 2018--2020
+  {%
+    \item <Impact bullet 1 (action + measurable outcome)>
+    \item <Impact bullet 2>
+    \item <Impact bullet 3>
+  }
+
+% ------------------ Entry 2 ------------------
+\CVRole
+  {<Primary>}
+  {<Organization>}
+  {<Location>}
+  {<Dates>}
+  {%
+    \item <Impact bullet 1>
+    \item <Impact bullet 2>
+  }
+
+% ============================================================
+% END OF <SECTION NAME>
+% ============================================================
+\end{lstlisting}
+
+\subsection*{Step 3 — Import into Main File}
+In \texttt{main.tex}, include the new section:
+
+\begin{lstlisting}
+\input{sections/projects.tex}
+\end{lstlisting}
+
+Recompile with:
+\begin{lstlisting}
+lualatex main.tex
+# or
+xelatex main.tex
+\end{lstlisting}
+
+\section*{Example: Education Section}
+
+\begin{lstlisting}
+\CVSection{Education}
+
+\CVItem{Master in Corporate Finance}
+  {New York University — Stern School of Business}
+  {New York, NY}
+  {2018–2020}
+\begin{CVList}
+  \item Thesis on company valuation models and financial forecasting.
+\end{CVList}
+
+\CVItem{Bachelor in Economics and Management}
+  {University of California, Berkeley}
+  {Berkeley, CA}
+  {2013–2017}
+\begin{CVList}
+  \item Graduated with honors. Activities: Finance and Consulting Club.
+\end{CVList}
+\end{lstlisting}
+
+\section*{Header Configuration}
+
+\subsection*{Left-Aligned Header}
+\begin{lstlisting}
+\newcommand{\makecvheader}{%
+  \noindent
+  {\LARGE\bfseries \MakeUppercase{\cvName\ \cvSurname}}\\[4pt]
+  {\large \cvRole}\\[8pt]
+  {\small
+    \faMapMarker*~\cvLocation
+    \quad|\quad
+    \faPhone*~\cvPhone
+    \quad|\quad
+    \faEnvelope~\href{mailto:\cvEmail}{\cvEmail}}\\[4pt]
+  {\small
+    \faGlobe~\href{\cvWebsite}{\cvWebsite}
+    \quad|\quad
+    \faGithub~\href{https://github.com/\cvGithub}{\cvGithub}
+    \quad|\quad
+    \faLinkedin~\href{https://www.linkedin.com/in/\cvLinkedin}{\cvLinkedin}}
+  \vspace{8pt}\\
+  \rule{\linewidth}{0.5pt}
+  \vspace{10pt}
+}
+\end{lstlisting}
+
+\section*{Example: Skills Section}
+\begin{lstlisting}
+\CVSection{Skills}
+
+Financial Planning - Budget Control - Profitability Analysis
+Cash Flow Management - Forecasting - ERP (SAP, Oracle)
+Advanced Excel - Power BI - SQL - Financial Modeling
+Team Leadership - Communication - Project Management
+\end{lstlisting}
+
+\section*{License}
+This template is distributed under the \textbf{MIT License}.  
+You are free to use, modify, and redistribute it with attribution.
+
+\end{document}

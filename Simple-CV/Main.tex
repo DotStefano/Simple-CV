@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Simple CV — main.tex (uses simplecv.cls)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{simplecv}
+
+% --------- Personal data (override class defaults) ---------
+\renewcommand{\cvName}{Daniel}
+\renewcommand{\cvSurname}{E. Harris}
+\renewcommand{\cvRole}{Finance manager}
+\renewcommand{\cvLocation}{New York, NY}
+\renewcommand{\cvPhone}{(+1) 516-436-0384}
+\renewcommand{\cvEmail}{DanielEHarris@jourrapide.com}
+\renewcommand{\cvWebsite}{https://bellautoonline.com}
+\renewcommand{\cvGithub}{DANIEL.HARRIS}
+\renewcommand{\cvLinkedin}{DANIEL-HARRIS}
+
+% Footer labels
+\renewcommand{\cvDocTitle}{CV}
+\renewcommand{\cvDate}{Nov. 2025} % o \DTMnow si quieres automático
+
+\begin{document}
+
+\makecvheader
+
+% ------- Content sections (modular) -------
+\input{sections/summary.tex}
+\input{sections/education.tex}
+\input{sections/skills.tex}
+\input{sections/experience.tex}
+\input{sections/extracurricular.tex}
+% \input{sections/honors.tex}
+% \input{sections/publications.tex}
+% \input{sections/committees.tex}
+
+\end{document}
