@@ -1,0 +1,144 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Simple CV (Black & White, Modular)
+% XeLaTeX / LuaLaTeX
+% Version 1.0 — Nov 2025
+%
+% Compilar con: xelatex o lualatex
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{article}
+
+% ---- Paquetes mínimos y seguros para ATS
+\usepackage{fontspec}      % Texto Unicode real
+\usepackage{geometry}      % Márgenes
+\usepackage{parskip}       % Espaciado entre párrafos
+\usepackage[unicode]{hyperref} % Enlaces clicables (unicode)
+\usepackage{enumitem}      % Listas compactas y controladas
+\usepackage{xifthen}       % Condicionales simples en macros (opcional)
+\usepackage{fontawesome5}  % Íconos (email, phone, github, linkedin, etc.)
+\usepackage{tabularx}
+\usepackage{array}
+
+
+% ---- Configuración de página
+\geometry{left=2.2cm,right=2.2cm,top=2cm,bottom=2.2cm}
+\setmainfont{TeX Gyre Heros} % Sans simple; alternativa: "TeX Gyre Termes"
+\linespread{1.12}
+\setlength{\parindent}{0pt}
+\sloppy
+\hypersetup{
+  colorlinks=false,
+  breaklinks=true,
+  pdfcreator={XeLaTeX/LuaLaTeX},
+  pdfproducer={ATS Simple CV},
+  pdfauthor={Daniel E. Harris},
+  pdftitle={CV - Daniel E. Harris}
+}
+
+% ============================================================
+% ---- Personal data (ATS-friendly, black & white)
+% ============================================================
+\newcommand{\cvName}{Daniel}
+\newcommand{\cvSurname}{E. Harris}
+\newcommand{\cvRole}{Finance manager}
+\newcommand{\cvLocation}{New York, NY}
+\newcommand{\cvPhone}{(+1) 516-436-0384}
+\newcommand{\cvEmail}{DanielEHarris@jourrapide.com}
+\newcommand{\cvWebsite}{https://bellautoonline.com} % con esquema para link válido
+\newcommand{\cvGithub}{MySite}
+\newcommand{\cvLinkedin}{MySite} % solo el slug del perfil
+
+% ============================================================
+% ---- Header 
+% ============================================================
+\newcommand{\makecvheader}{%
+  \noindent
+  {\LARGE\bfseries \MakeUppercase{\cvName\ \cvSurname}}\\[4pt]
+  {\large \cvRole}\\[8pt]
+  {\small
+    \faMapMarker*~\cvLocation
+    \quad|\quad
+    \faPhone*~\cvPhone
+    \quad|\quad
+    \faEnvelope~\href{mailto:\cvEmail}{\cvEmail}}\\[4pt]
+  {\small
+    \faGlobe~\href{\cvWebsite}{\cvWebsite}
+    \quad|\quad
+    \faGithub~\href{https://github.com/\cvGithub}{\cvGithub}
+    \quad|\quad
+    \faLinkedin~\href{https://www.linkedin.com/in/\cvLinkedin}{\cvLinkedin}}
+  \vspace{10pt}
+}
+
+% ============================================================
+% ---- Macro de sección y estructura base
+% ============================================================
+
+% ---- Fila estilo "empresa a la izquierda / ubicación a la derecha" + "cargo / fechas"
+% Uso: \CVRole{Cargo}{Empresa}{Ubicación}{Fechas}{\item ... \item ...}
+\newcommand{\CVRole}[5]{%
+  \par\addvspace{8pt}%
+  % Fila 1: Empresa — Ubicación (derecha)
+  \noindent\begin{tabularx}{\linewidth}{@{}X >{\raggedleft\arraybackslash}p{.36\linewidth}@{}}
+    \textbf{#2} & \textit{#3} \\
+  \end{tabularx}\par
+  % Fila 2: Cargo (versalitas) — Fechas (cursiva, derecha)
+  \noindent\begin{tabularx}{\linewidth}{@{}X >{\raggedleft\arraybackslash}p{.36\linewidth}@{}}
+    \textsc{#1} & \textit{#4} \\
+  \end{tabularx}\par
+  % Viñetas
+  \begin{CVList}
+    #5
+  \end{CVList}
+}
+
+% ---- Ajustes de estilo (puedes cambiarlos)
+\newcommand{\CVruleheight}{0.6pt}   % grosor de la línea
+\newcommand{\CVsectiongap}{0.6em}   % espacio entre el título y la línea
+
+% ---- Título de sección con línea que parte desde el texto
+\newcommand{\CVSection}[1]{%
+  \par\addvspace{14pt}%
+  \noindent\leavevmode
+  {\large\bfseries #1}%
+  \hspace{\CVsectiongap}%
+  \leaders\hrule height \CVruleheight\hfill\kern0pt
+  \par\addvspace{8pt}%
+}
+
+% ---- Entrada tipo (experiencia, educación, etc.)
+% Uso: \CVItem{Título}{Entidad}{Ubicación}{Fechas}
+\newcommand{\CVItem}[4]{%
+  \noindent\textbf{#1}\\
+  #2\\
+  \ifthenelse{\isempty{#3}}{}{#3\\}%
+  \ifthenelse{\isempty{#4}}{}{\emph{#4}}%
+  \par\vspace{3pt}%
+}
+
+% ---- Lista compacta de ítems
+\newenvironment{CVList}{%
+  \begin{itemize}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]}{\end{itemize}}
+
+% =====================================================================
+\begin{document}
+\pagestyle{plain}
+
+\makecvheader
+
+% =========================================================
+% Content sections (each in its own .tex file)
+\input{sections/summary.tex}
+\input{sections/education.tex}
+\input{sections/skills.tex}
+\input{sections/experience.tex}
+\input{sections/Courses.tex}
+\input{sections/extracurricular.tex}
+% \input{sections/honors.tex}
+% \input{sections/publications.tex}
+% \input{sections/committees.tex}
+% =========================================================
+
+\end{document}
