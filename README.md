@@ -31,6 +31,12 @@ ATS Simple CV es una plantilla de \LaTeX{} limpia y modular para crear un CV pro
 </p>
 
 <p align="center">
+  <a href="https://www.overleaf.com/1137679529yvnqkgvmzygg#35a428" target="_blank">
+    <img alt="Edit on Overleaf" src="https://img.shields.io/badge/Edit%20on-Overleaf-47A141?logo=overleaf&logoColor=white" />
+  </a>
+</p>
+
+<p align="center">
   <table align="center">
     <tr>
       <th>Page 1</th>
