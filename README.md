@@ -1,9 +1,9 @@
 <h1 align="center">
   <a href="https://github.com/DotStefano/Simple-CV" title="Simple CV">
     <br />
-    Simple CV
 	  
-	  📄
+    📄Simple CV📄
+	    
   </a>
 </h1>
 
